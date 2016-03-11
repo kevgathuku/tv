@@ -1,9 +1,10 @@
 <html>
   <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
     <script src="//use.typekit.net/fyc2nqo.js"></script>
+    <link rel="stylesheet" href="/bower_components/vegas/dist/vegas.min.css">
     <script>try{Typekit.load();}catch(e){}</script>
 
     <style>
@@ -67,7 +68,7 @@
       function getStars() {
         $.ajax({
           dataType: "json",
-          url: "https://api.github.com/repos/hyperoslo/Sync",
+          url: "https://api.github.com/repos/django/django",
           success: function(data, textStatus) {
             $("#stars").text(data.watchers);
           }
@@ -84,23 +85,18 @@
   </head>
 
   <body>
-    <div class="container">
-      <div class="headline">
-        <h2>
-          The
-        </h2>
-        <h1>
-          "Johannes brings cake to celebrate 1000 stars on GitHub"
-        </h1>
-        <h2>
-          countdown
-        </h2>
-      </div>
-
-      <h1 class="counter">
-        <i class="fa fa-star"></i> <span id="stars"></span> / 1000
-      </h1>
-    </div>
+    <script src="/bower_components/vegas/dist/vegas.min.js"></script>
+    <script type="text/javascript">
+    $("body").vegas({
+      slides: [
+          { src: "/images/andela_men.jpg" },
+          { src: "/images/jump_shot.jpg" },
+          { src: "/images/originals.jpg" },
+          { src: "/images/160111TeamPhoto_Q11566.jpg.jpg" },
+          { src: "/images/151215TeamMafisi26.jpg" }
+      ]
+    });
+    </script>
   </body>
 
 </html>
