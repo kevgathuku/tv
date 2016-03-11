@@ -4,13 +4,12 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
     <script src="//use.typekit.net/fyc2nqo.js"></script>
-    <link rel="stylesheet" href="/bower_components/vegas/dist/vegas.min.css">
+    <link rel="stylesheet" href="/vegas/vegas.min.css">
     <script>try{Typekit.load();}catch(e){}</script>
 
     <style>
 
       body {
-        background: #f57d2d;
         color: #fff;
         font-weight: bold;
         font-family: "proxima-nova";
@@ -41,61 +40,23 @@
       }
 
     </style>
-
-    <script>
-      var lastChangeAt = new Date();
-
-      // Refresh the page if a commit has been made to the 'gh-pages'
-      // branch of this repository.
-      function refreshIfChanged() {
-        $.ajax({
-          dataType: "json",
-          url: "https://api.github.com/repos/hyperoslo/tv/commits",
-          data: {
-            sha: "gh-pages",
-            since: lastChangeAt.toISOString()
-          },
-          success: function(data, textStatus) {
-            if (data.length > 0) {
-              window.location.reload();
-            }
-          }
-        });
-      }
-
-      // Set the contents of #stars to the amount of stars hyperoslo/Sync
-      // has on GitHub.
-      function getStars() {
-        $.ajax({
-          dataType: "json",
-          url: "https://api.github.com/repos/django/django",
-          success: function(data, textStatus) {
-            $("#stars").text(data.watchers);
-          }
-        });
-      }
-
-      $(document).ready(function() {
-        getStars();
-
-        setInterval(refreshIfChanged, 60000);
-        setInterval(getStars, 60000);
-      });
-    </script>
   </head>
 
   <body>
-    <script src="/bower_components/vegas/dist/vegas.min.js"></script>
+    <script src="/vegas/vegas.min.js"></script>
     <script type="text/javascript">
-    $("body").vegas({
-      slides: [
-          { src: "/images/andela_men.jpg" },
-          { src: "/images/jump_shot.jpg" },
-          { src: "/images/originals.jpg" },
-          { src: "/images/160111TeamPhoto_Q11566.jpg.jpg" },
-          { src: "/images/151215TeamMafisi26.jpg" }
-      ]
+    $(document).ready(function() {
+      $("body").vegas({
+        slides: [
+            { src: "/images/andela_men.jpg" },
+            { src: "/images/jump_shot.jpg" },
+            { src: "/images/originals.jpg" },
+            { src: "/images/160111TeamPhoto_Q11566.jpg.jpg" },
+            { src: "/images/151215TeamMafisi26.jpg" }
+        ]
+      });
     });
+
     </script>
   </body>
 
